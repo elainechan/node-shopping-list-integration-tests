@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: AFrmMogjvxSGHj3I6AMOPXdzlSn+LmRTyZ9xx1ov6DAFNLJZ+oIVqzCu0vmYRxW0nvLRETnAmBZnfM3zjIih+nDaRf+10LG0xoQnZLcmTcmbPH6CcqyC+t8Mnd3PRoA4OCNZadLfvYvhVXWCjnywx3G5LoqRp1VCT7MI9NN9NfyG/MYgnUWFLi1fo5znhhs5mLjgEgS3VrBB/qvEUgX1jhu5Pn1iEqHuPAij8GSRqdBHHuWbqDd+8GUrtrdk099S7n9NQiRzjeX35A/T8DuP7w0FFC/qif+tmXd74Rj0jTY3tJtnLyedPFOEAwKPQgd6mFY7Z3cjdgnQFeciY9XQjU+RbfZ8HkzNMamJC9tyvoCoVRKWN3GSopbBVCG3vRHDe4g6oPAdkZzt7rprO6H6/HmdNH31eWWWhxL/ttxmz1NSCIhHLghbG2uDkJUNZeM1VID3YLzCCF2J5JRGd4Ly+q6jO06vvMiGukcxngx10nBbR+9PPq52hmWTyfY/QJPuTHch6mecbjBcLFlavpXm700k/TfbD1RcER9vmU77wd+odSFiyl0GZ0B+9ZomyqzA1Y+lHLM8gFX3BebdFVyg45/p62xmON5T2tCbXuxM8Cjqrd9bKGNVOTovDskw/37irXv7Pv/B0fYkDaWAYcHKyfrBdxjs+b4pQjp5O3b4wpw=
+  app: dry-forest-24943
+  on:
+    repo: elainechan/node-shopping-list-integration-tests
