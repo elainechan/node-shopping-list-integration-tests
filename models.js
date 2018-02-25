@@ -5,12 +5,6 @@ const uuid = require('uuid');
 // so for now we're using in-memory storage. This means each time
 // the app stops, our storage gets erased.
 
-// don't worry to much about how `ShoppingList` and `Recipes`
-// are implemented. Our concern in this example is with how
-// the API layer is implemented, and getting it to use an
-// existing model.
-
-
 function StorageException(message) {
   this.message = message;
   this.name = "StorageException";
@@ -18,7 +12,7 @@ function StorageException(message) {
 
 const ShoppingList = {
   create: function(name, checked) {
-    console.log('Creating new shopping list item');
+    console.log('Creating new shopping list item...');
     const item = {
       name: name,
       id: uuid.v4(),
@@ -28,15 +22,15 @@ const ShoppingList = {
     return item;
   },
   get: function() {
-    console.log('Retrieving shopping list items');
+    console.log('Retrieving shopping list items...');
     return Object.keys(this.items).map(key => this.items[key]);
   },
   delete: function(id) {
-    console.log(`Deleting shopping list item \`${id}\``);
+    console.log(`Deleting shopping list item \`${id}\`...`);
     delete this.items[id];
   },
   update: function(updatedItem) {
-    console.log(`Deleting shopping list item \`${updatedItem.id}\``);
+    console.log(`Deleting shopping list item \`${updatedItem.id}\`...`);
     const {id} = updatedItem;
     if (!(id in this.items)) {
       throw StorageException(
@@ -55,7 +49,7 @@ function createShoppingList() {
 
 const Recipes = {
   create: function(name, ingredients) {
-    console.log('Creating a new recipe');
+    console.log('Creating a new recipe...');
     const item = {
       name: name,
       id: uuid.v4(),
@@ -65,7 +59,7 @@ const Recipes = {
     return item;
   },
   get: function() {
-    console.log('Retreiving recipes');
+    console.log('Retreiving recipes...');
     return Object.keys(this.items).map(key => this.items[key]);
   },
   delete: function(itemId) {
@@ -73,7 +67,7 @@ const Recipes = {
     delete this.items[itemId];
   },
   update: function(updatedItem) {
-    console.log(`Updating recipe with id \`${updatedItem.id}\``);
+    console.log(`Updating recipe with id \`${updatedItem.id}\`...`);
     const {id} = updatedItem;
     if (!(id in this.items)) {
       throw StorageException(
