@@ -58,16 +58,16 @@ router.put('/:id', jsonParser, (req, res) => {
     const message = (
       `Request path id (${req.params.id}) and request body id `
       `(${req.body.id}) must match.`);
-    console.error(message);
-    return res.status(400).send(message);
-  }
+      console.error(message);
+      return res.status(400).send(message);
+    }
   console.log(`Updating recipe item \`${req.params.id}\`...`);
   const updatedItem = Recipes.update({
     id: req.params.id,
     name: req.body.name,
     ingredients: req.body.ingredients
   });
-  res.status(204).end();
+  res.set('Content-Type', 'application/json').status(204).end();
 })
 
 module.exports = router;
